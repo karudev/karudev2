@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Worker</h1>
+{% if worker.pictureUrl is not null %}
+           <img src="{{asset('uploads/workers/'~worker.pictureUrl)}}" />
+{% endif %}
+    <table>
+        <tbody>
+            
+            <tr>
+                <th>Id</th>
+                <td>{{ worker.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ worker.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ worker.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Job</th>
+                <td>{{ worker.job }}</td>
+            </tr>
+            <tr>
+                <th>Birthdate</th>
+                <td>{% if worker.birthdate %}{{ worker.birthdate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ worker.picture }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ worker.description }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ worker.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ worker.phone }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ worker.address }}</td>
+            </tr>
+            <tr>
+                <th>Zipcode</th>
+                <td>{{ worker.zipcode }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ worker.city }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ worker.country }}</td>
+            </tr>
+            <tr>
+                <th>Cv</th>
+                <td>
+                 {% if worker.cvPath is not null %}
+                    <a target="_blank" href="{{asset('/uploads/cv/'~worker.cvPath)}}">Cv</a>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Ismanager</th>
+                <td>{% if worker.isManager %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Regime</th>
+                <td>{{ worker.regime }}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{ worker.salary }}</td>
+            </tr>
+            <tr>
+                <th>Tjm</th>
+                <td>{{ worker.tjm }}</td>
+            </tr>
+            <tr>
+                <th>Twitterurl</th>
+                <td>{{ worker.twitterUrl }}</td>
+            </tr>
+            <tr>
+                <th>Linkedinurl</th>
+                <td>{{ worker.linkedinUrl }}</td>
+            </tr>
+            <tr>
+                <th>Viadeourl</th>
+                <td>{{ worker.viadeoUrl }}</td>
+            </tr>
+            <tr>
+                <th>Githuburl</th>
+                <td>{{ worker.githubUrl }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_worker_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_worker_edit', { 'id': worker.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

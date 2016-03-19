@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Worker list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Job</th>
+                <th>Birthdate</th>
+                <th>Picture</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Zipcode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Cv</th>
+                <th>Ismanager</th>
+                <th>Regime</th>
+                <th>Salary</th>
+                <th>Tjm</th>
+                <th>Twitterurl</th>
+                <th>Linkedinurl</th>
+                <th>Viadeourl</th>
+                <th>Githuburl</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for worker in workers %}
+            <tr>
+                <td><a href="{{ path('admin_worker_show', { 'id': worker.id }) }}">{{ worker.id }}</a></td>
+                <td>{{ worker.firstname }}</td>
+                <td>{{ worker.lastname }}</td>
+                <td>{{ worker.job }}</td>
+                <td>{% if worker.birthdate %}{{ worker.birthdate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ worker.picture }}</td>
+                <td>{{ worker.description }}</td>
+                <td>{{ worker.email }}</td>
+                <td>{{ worker.phone }}</td>
+                <td>{{ worker.address }}</td>
+                <td>{{ worker.zipcode }}</td>
+                <td>{{ worker.city }}</td>
+                <td>{{ worker.country }}</td>
+                <td>
+                {% if worker.cvPath is not null %}
+                    <a target="_blank" href="{{asset('/uploads/cv/'~worker.cvPath)}}">Cv</a>
+                {% endif %}
+                </td>
+                <td>{% if worker.isManager %}Yes{% else %}No{% endif %}</td>
+                <td>{{ worker.regime }}</td>
+                <td>{{ worker.salary }}</td>
+                <td>{{ worker.tjm }}</td>
+                <td>{{ worker.twitterUrl }}</td>
+                <td>{{ worker.linkedinUrl }}</td>
+                <td>{{ worker.viadeoUrl }}</td>
+                <td>{{ worker.githubUrl }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_worker_show', { 'id': worker.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_worker_edit', { 'id': worker.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_worker_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
