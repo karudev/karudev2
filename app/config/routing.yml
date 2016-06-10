@@ -1,8 +1,9 @@
+kdv_front:
+    resource: "@KdvFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 kdv_worker:
     resource: "@KdvWorkerBundle/Controller/"
     type:     annotation
     prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation

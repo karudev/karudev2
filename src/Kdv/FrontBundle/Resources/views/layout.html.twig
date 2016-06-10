@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">		
+	<meta content="telephone=no" name="format-detection">										<!--Remove styling of telephone numbers on IOS-->
+    <meta name="description" content="A Template by Designzway Team"> 							<!--Change content-->	
+    <meta name="keywords" content="HTML, LESS, CSS, JavaScript"> 								<!--Change content-->	
+    <meta name="author" content="Designzway Team"> 												<!--Change content-->						
+	<title>{% block title %}Karudev Informatique - Conseils et développements web sur mesure{% endblock %}</title>															<!--Change title-->
+    <link href="{{asset('bundles/kdvfront/css/bootstrap.css')}}" rel="stylesheet"> 
+    <link href="{{asset('bundles/kdvfront/css/style_orange_light.css')}}" rel="stylesheet">    										<!-- Stylesheet -->    
+    {% block css %}{% endblock %}
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    
+<div class="wrapper">
+	<!-- Begin header -->
+	<header>
+		<div class="presentation">
+			<!-- Begin top navigation -->
+			<div class="top-info">
+		   		<div class="container"> 
+		            <p class="top-info__text pull-left hidden-xs small">
+		                Conseils et prestations de services informatiques
+		            </p>
+		            <p class="top-info__text pull-right small">
+		                Un projet ? Des questions ? Contactez nous <span class="text-highlight">renault@karudev.fr / 06 36 92 36 23</span>
+		            </p>
+		   		</div>	   		
+			</div>
+			<!-- End top navigation -->
+
+			<!-- Begin main navigation -->
+			<div class="main-nav">
+
+		        <div class="divider-circle"></div>
+
+	        	<nav class="container">  
+	        		<!-- Logo -->
+	                <div class="logo pull-left">
+	                    <a href="{{path('kdv_front_default_index')}}">
+	                    	<!-- Remove comments to choose image and add comment to h1 -->
+	                    	<!--<img class="logo-img" src="images/logo.png" alt="Appic logo">-->	
+	                        <h1 class="logo-text"><span class="text-highlight">Karudev</span> Informatique</h1>			
+	                    </a>
+	                </div>
+	                <!-- End Logo -->
+
+	 				<!-- Main navigation-->
+					<div class="pull-right" id="navigation-box">
+	                    <a id="navigation-toggle" href="#">
+	                        <span class="menu-icon"></span>
+	                    </a>
+	                    <ul id="navigation">
+	                        <li class="active-item">
+	                            <span class="sub-nav-toggle plus"></span>
+	                            <a href="{{path('kdv_front_default_index')}}">Accueil</a>
+	                           
+	                        </li>
+	                        <li><a href="{{path('kdv_front_default_societe')}}">La société</a></li>
+                                <li><a href="{{path('kdv_front_default_devis')}}">Devis en ligne</a></li>
+                                <li><a href="{{path('kdv_front_default_contact')}}">Contactez nous</a></li>
+                                {#<li><a href="about.html">Projets / Missions</a></li>
+	                        <li>
+	                            <span class="sub-nav-toggle plus"></span>
+	                            <a href="#">Pages</a>
+	                            <ul>
+	                                <li><a href="coming-soon.html">Coming soon</a></li>
+	                                <li><a href="how-it-works.html">How it works</a></li>
+	                                <li><a href="page-elements.html">Page elements</a></li>
+	                                <li><a href="404.html">404</a></li>
+	                            </ul>
+	                        </li>
+	                        <li>
+	                            <span class="sub-nav-toggle plus"></span>
+	                            <a href="services.html">Services</a>
+	                            <ul>
+	                                <li><a href="prices.html">Price plans</a></li>
+	                            </ul>
+	                        </li>
+	                        <li>
+	                        	<span class="sub-nav-toggle plus"></span>
+	                            <a href="#">Blog</a>
+	                            <ul>
+	                                <li><a href="blog-style1.html">Blog style 1</a></li>
+	                                <li><a href="blog-style1-full.html">Blog style 1 fullwidth</a></li>
+	                                <li><a href="blog-style2.html">Blog style 2</a></li>
+	                                <li><a href="blog-style2-full.html">Blog style 2 fullwidth</a></li>
+	                                <li><a href="blog-style3.html">Blog style 3</a></li>
+	                                <li><a href="blog-author.html">Blog author</a></li>
+	                                <li><a href="single-post.html">Single post</a></li>
+	                                <li><a href="single-post-full.html">Single post fullwidth</a></li>
+	                            </ul>
+	                        </li>
+	                        <li>
+	                            <span class="sub-nav-toggle plus"></span>
+	                            <a href="#">Gallery</a>
+	                            <ul>
+	                                <li><a href="gallery-random.html">Gallery random</a></li>
+	                                <li><a href="gallery-columns2.html">Gallery columns 2</a></li>
+	                                <li><a href="gallery-columns3.html">Gallery columns 3</a></li>
+	                                <li><a href="case-studies.html">Case studies</a></li>
+	                            </ul>
+	                        </li>
+	                        <li>
+	                            <span class="sub-nav-toggle plus"></span>
+	                            <a href="shop-catalogue.html">Shop</a>
+	                            <ul>
+	                                <li><a href="single-product.html">Single product</a></li>
+	                            </ul>
+	                        </li>
+                                <li><a href="contact.html">Devis</a></li>
+	                        <li><a href="contact.html">Contact</a></li>#}
+	                    </ul>
+	                </div>
+	        	</nav>
+			</div> 
+			<!-- End main navigation -->
+		</div>
+		<!-- End presentation-->
+	
+	</header>
+	<!-- End header -->
+{% block body %}
+
+{% endblock body %}
+	<!--Begin footer -->
+	{#<footer class="footer-wrapper">
+		<!--Begin footer widget-->
+		<div class="container footer-widgets">
+			<div class="row">
+				<div class="col-sm-12 col-md-5 col-lg-6 widget-news">
+					<h3 class="widget-title">Nouvelle de Karudev Informatique</h3>
+					<div class="row">
+						<div class="col-sm-6 col-md-12">
+			                <p class="widget-news__text">Laissez nous votre email, afin d'être mis au courant des disponibilités de nos consultants, et des dernières technologies utilisées.</p>
+			                <!-- subscribe form -->
+			                <form class="subscribe-form" id="subscribe-form" name="subscribe-form" method="post" action="getEmail.php" novalidate>
+			                    <input class="subscribe-input" id="input-email" name="input-email" type="email" placeholder="Votre email">
+			                    <button class="submit-button" id="submit-button" type="submit">
+					                <i class="icon-circle icon-circle--thin fa fa-arrow-right"></i>
+					            </button>
+			                </form>
+						</div>
+						<div class="col-sm-6 col-md-12">
+			                <address class="widget-contacts">
+			                	<span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-phone"></i>06 36 92 36 23</span>
+			                    <span class="widget-contacts__item"><i class="icon-circle icon-circle--thin fa fa-envelope"></i><a href="renault@karudev.fr">renault@karudev.fr</a></span>
+			                </address>
+						</div>
+               		</div>
+				</div>
+				<div class="col-sm-12 col-md-7 col-lg-6 widget-tweets">
+	            	<h3 class="widget-title">Derniers Tweets</h3>
+	                <ul class="twitter_update_list" id="twitter-feed"></ul>
+				</div>
+				
+			</div>
+		</div>#}
+                <!--End footer widget -->
+
+		<!--Begin footer secondary -->
+		<div class="footer-secondary">
+
+            <div class="divider-circle"></div>
+
+			<div class="container">
+			<ul class="social">
+		       <!-- <li class="social__item custom-tooltip tooltip--info" title="pinterest">
+		        		<a class="icon-circle fa fa-pinterest" href="http://pinterest.com/oliagozha/" target="_blank"></a>
+		            </li>
+		            <li class="social__item custom-tooltip tooltip--info" title="google">
+		            	<a class="icon-circle fa fa-google-plus" href="https://plus.google.com/u/0/100180333527158639883/posts" target="_blank"></a>
+		            </li>-->
+		            <li class="social__item custom-tooltip tooltip--info" title="linkedin">
+		            	<a class="icon-circle fa fa-linkedin" href="http://ua.linkedin.com/pub/olia-gozha/49/b91/268" target="_blank"></a>
+		            </li>
+		            <li class="social__item custom-tooltip tooltip--info" title="twitter">
+		            	<a class="icon-circle fa fa-twitter" href="http://twitter.com/@OliaGozha" target="_blank"></a>
+		            </li>
+		            <li class="social__item custom-tooltip tooltip--info" title="facebook">
+		            	<a class="icon-circle fa fa-facebook" href="http://www.facebook.com/people/@/http://www.facebook.com/olia.gozha" target="_blank"></a>
+		            </li>
+	        	</ul>
+		    	<div class="copyright">
+		        	<small class="small">&copy; Karudev Informatique, 2008 - {{'now'|date('Y')}}. Tous droits réservés. <a href="#">Mentions légales</a></small>
+		        </div>
+			</div>
+		</div>
+		<!--End footer secondary -->
+	</footer>
+	<!--End footer -->
+</div>
+
+<!--End wrapper -->
+	
+<script src="{{asset('bundles/kdvfront/external/jquery/jquery-1.11.0.min.js')}}"></script> <!--Script jQuery-->	
+<script src="{{asset('bundles/kdvfront/external/jquery/jquery-migrate-1.2.1.min.js')}}"></script>			<!--Script jQuery for old version jQuery-->
+<script src="{{asset('bundles/kdvfront/external/bootstrap/js/bootstrap.min.js')}}"></script>				<!--Bootstrap JavaScript-->
+
+{% block js %}
+
+{% endblock %}
+</body>
+</html>
